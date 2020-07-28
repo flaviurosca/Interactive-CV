@@ -1,0 +1,202 @@
+:root {
+  font-size: 10px;
+  --primary-color: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+}
+
+.body-overflow {
+  overflow: hidden;
+}
+
+
+/* __________OVERLAY__________ */
+#overlay {
+  position: fixed;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0,0,0, 0.9);
+  transition: 0.5s ease-in-out;
+}
+
+
+#overlay h2 {
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+  margin: 15px 0 25px 0;
+}
+
+/* on click event */
+.overlay-display {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background-color: rgba(0,0,0, 0.9);
+  overflow: hidden;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* on click event */
+.overlay-hide {
+  width: 1px;
+  height: 1px;
+  border-radius: 90px 90px 0 0;
+  left: 50%;
+  bottom: 0px;
+}
+
+
+.overlay-toggle {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -40px;
+  font-size: 3rem;
+  width: 80px;
+  height: 60px;
+  border: none;
+  box-shadow: 0px -10px 15px -6px #000;
+  border-radius: 90px 90px 0 0;
+  background:linear-gradient(to bottom, #78c8e6 15%, #408c99 100%);
+  outline: none;
+  display: block;
+  z-index: 4;
+}
+
+.fa-close {
+  transition: 0.5s ease-in;
+  
+}
+
+.overlay-content {
+  background-color: rgba(0,0,0, 0.4);
+  width: 450px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.home-section {
+  width: 1200px;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.content-section {
+  width: 1200px;
+  font-size: 3rem;
+  margin: 50px 0;
+}
+
+.content-section section {
+  margin: 50px 0;
+}
+
+/* __________WEATHER APP__________ */
+
+.weather-app {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.5),
+              inset 0 -15px 15px rgba(255, 255, 255, 0.5),
+              0 15px 15px rgba(0,0,0, 0.5),
+              inset 0 15px 15px rgba(0,0,0, 0.5);
+}
+
+
+.notification {
+  display: none;
+  background-color: white;
+}
+
+.notification p {
+	color: #b10a1b;
+	font-size: 2rem;
+	margin: 0;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.temperature {
+  text-align: center;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.location {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.weather-icon {
+  text-align: center;
+}
+
+.weather-app button {
+  width: 57px;
+  height: 57px;
+	text-align: center;
+	font-size: 1.5rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0,0,0, 0.6);
+  color: white;
+  margin-bottom: 3px;
+}
+
+
+/* __________CLOCK & GREETING__________ */
+#time {
+  font-size: 8rem;
+  color: #fff;
+  
+}
+
+
+/* __________BUTTONS RIPPLE EFFECT__________ */
+button {
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.overlay-toggle span {
+  position: absolute;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate-btn 1s linear infinite;
+}
+
+@keyframes animate-btn {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
