@@ -207,3 +207,4 @@ allButtons.forEach(btn => {
     }, 1000);
   })
 })
+

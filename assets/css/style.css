@@ -54,7 +54,7 @@ body {
   bottom: 0px;
 }
 
-
+/* __________OVERLAY BUTTON__________ */
 .overlay-toggle {
   position: fixed;
   bottom: 0px;
@@ -62,21 +62,58 @@ body {
   margin-left: -40px;
   font-size: 3rem;
   width: 80px;
-  height: 60px;
+  height: 40px;
   border: none;
-  box-shadow: 0px -10px 15px -6px #000;
   border-radius: 90px 90px 0 0;
   background:linear-gradient(to bottom, #78c8e6 15%, #408c99 100%);
   outline: none;
   display: block;
   z-index: 4;
+  transition: 0.5s;
+}
+
+.overlay-toggle:hover {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 15px 5px #000;
+  transition: 0.5s;
+}
+
+/* __________BUTTONS RIPPLE EFFECT__________ */
+button {
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.overlay-toggle span {
+  position: absolute;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate-btn 1s linear infinite;
+}
+
+@keyframes animate-btn {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
 }
 
 .fa-close {
   transition: 0.5s ease-in;
-  
 }
 
+/* __________OVERLAY__________ */
 .overlay-content {
   background-color: rgba(0,0,0, 0.4);
   width: 450px;
@@ -85,16 +122,18 @@ body {
   padding: 10px;
 }
 
+/* __________MAIN__________ */
 .home-section {
-  width: 1200px;
+  width: 100%;
   height: 100vh;
   background-color: var(--primary-color);
 }
 
+
 .content-section {
   width: 1200px;
   font-size: 3rem;
-  margin: 50px 0;
+  margin: 50px 100px;
 }
 
 .content-section section {
@@ -170,33 +209,4 @@ body {
   
 }
 
-
-/* __________BUTTONS RIPPLE EFFECT__________ */
-button {
-  overflow: hidden;
-  cursor: pointer;
-  outline: none;
-}
-
-.overlay-toggle span {
-  position: absolute;
-  background-color: #fff;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 50%;
-  animation: animate-btn 1s linear infinite;
-}
-
-@keyframes animate-btn {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-  }
-}
 
