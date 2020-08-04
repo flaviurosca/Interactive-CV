@@ -1,6 +1,6 @@
 :root {
   font-size: 10px;
-  --primary-color: #ddd;
+  --primary-color: rgba(68, 68, 68, 0.5);
 }
 
 * {
@@ -8,6 +8,7 @@
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   margin: 0 auto;
 }
 
@@ -22,7 +23,7 @@ body {
   z-index: 3;
   display: grid;
   place-items: center;
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgb(95, 95, 95);
   transition: 0.5s ease-in-out;
 }
 
@@ -113,7 +114,7 @@ button {
   transition: 0.5s ease-in;
 }
 
-/* __________OVERLAY__________ */
+
 .overlay-content {
   background-color: rgba(0,0,0, 0.4);
   width: 450px;
@@ -122,23 +123,7 @@ button {
   padding: 10px;
 }
 
-/* __________MAIN__________ */
-.home-section {
-  width: 100%;
-  height: 100vh;
-  background-color: var(--primary-color);
-}
 
-
-.content-section {
-  width: 1200px;
-  font-size: 3rem;
-  margin: 50px 100px;
-}
-
-.content-section section {
-  margin: 50px 0;
-}
 
 /* __________WEATHER APP__________ */
 
@@ -210,3 +195,160 @@ button {
 }
 
 
+/* __________NAVBAR__________ */
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: white;
+  z-index: 2;
+}
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+
+
+/* __________MAIN__________ */
+main {
+  margin: 0 auto;
+}
+
+.home-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/assets/img/home-background.jpg');
+  background-color: var(--primary-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  cursor: none;
+  text-align: center;
+  text-shadow: 3px 5px 5px rgb(0, 0, 0);
+  /* z-index: 1; */
+  overflow: hidden;
+  user-select: none;
+}
+
+.baffle-title {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+
+.content-section {
+  font-size: 3rem;
+  margin: 50px 100px;
+}
+
+.content-section section {
+  margin: 50px 0;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    background-color: white;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* __________Nav animation__________ */
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle-burger .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle-burger .line2 {
+  opacity: 0;
+}
+
+.toggle-burger .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}

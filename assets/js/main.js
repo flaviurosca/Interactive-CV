@@ -21,7 +21,7 @@ overlayToggle.addEventListener('click', function () {
 });
 
 // __________WEATHER APP__________
-// const apiKey = 'APPID=0d9bf5644d445d0b5eff3e004d45e2aa';
+const apiKey = 'APPID=0d9bf5644d445d0b5eff3e004d45e2aa';
 const notificationElement = document.querySelector('.notification');
 const iconElement = document.querySelector('.weather-icon');
 const tempElement = document.querySelector('.temperature p');
@@ -207,4 +207,49 @@ allButtons.forEach(btn => {
     }, 1000);
   })
 })
+
+
+// __________BAFFLE TITLE__________
+const text = baffle('.baffle-title');
+text.set({
+  characters : '░▒/ ░>/▓▓ █▓▓>▓ █▓█ ▒█▒// ░█▒▒ ▓>/ ▒▒░▒ <░▓█',
+  speed: 120
+});
+
+setInterval(function() {
+  text.start();
+  text.reveal(4000);
+}, 10000);
+
+
+// __________NAV__________
+
+function navSlide() {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  hamburger.addEventListener('click', function() {
+    // Toggle Nav
+    nav.classList.toggle('nav-active');
+
+
+    // Animate Links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      }
+    });
+
+    // Hamburger animation
+    hamburger.classList.toggle('toggle-burger');
+  });
+
+  
+}
+
+navSlide();
+
 
