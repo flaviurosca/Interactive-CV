@@ -1,3 +1,5 @@
+window.location.hash="home";
+
 // __________OVERLAY__________
 const overlay = document.querySelector('#overlay');
 const overlayToggle = document.querySelector('.overlay-toggle');
@@ -184,6 +186,8 @@ function setBackgroundGreet() {
     overlay.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?nature,night')";
     greeting.textContent = 'Good Evening!';
   }
+  overlay.style.backgroundRepeat = 'no-repeat';
+  overlay.style.backgroundSize = 'cover';
 }
 
 // Run clock

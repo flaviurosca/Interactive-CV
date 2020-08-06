@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0 auto;
@@ -121,6 +125,11 @@ button {
   text-align: center;
   margin-top: 30px;
   padding: 10px;
+}
+
+#overlay img {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -258,6 +267,11 @@ main {
   background-size: cover;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .title {
   position: absolute;
   top: 40%;
@@ -282,12 +296,26 @@ main {
 .content-section {
   font-size: 3rem;
   margin: 50px 100px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.content-section section {
-  margin: 50px 0;
+
+.content-section article {
+  margin-bottom: 50px;
 }
 
+.main-content {
+  width: 50%;
+}
+
+.contactme-section {
+  width: 25%;
+  height: 300px;
+  position: sticky;
+  top: 80px;
+  background-color: yellowgreen;
+}
 
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
@@ -321,6 +349,20 @@ main {
 
   .hamburger {
     display: block;
+  }
+
+  .content-section {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #overlay {
+    display: none;
+  }
+
+  .overlay-toggle {
+    display: none;
   }
 }
 
