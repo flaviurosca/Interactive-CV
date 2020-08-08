@@ -284,6 +284,7 @@ img {
   /* z-index: 1; */
   overflow: hidden;
   user-select: none;
+  white-space: nowrap;
 }
 
 .baffle-title {
@@ -294,8 +295,7 @@ img {
 
 
 .content-section {
-  font-size: 3rem;
-  margin: 50px 100px;
+  margin: 50px 0px;
   display: flex;
   justify-content: space-around;
 }
@@ -303,19 +303,74 @@ img {
 
 .content-section article {
   margin-bottom: 50px;
+  
+}
+
+.content-section h3 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  background-color: yellowgreen;
+  padding: 5px 50px;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.content-section h4 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.content-section p {
+  font-size: 2rem;
+  line-height: 4rem;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 .main-content {
-  width: 50%;
+  max-width: 900px;
+  margin: 0px 5%;
+}
+
+article {
+  background-color: rgba(205, 255, 113, 0.301);
+  padding: 5px 50px;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.competencies {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 10px;
+}
+
+.competencies img {
+  width: 100%;
+  height: auto;
+}
+
+.resume-section div {
+  margin: 100px 0px;
+}
+
+.education p {
+  font-size: 1.5rem;
 }
 
 .contactme-section {
-  width: 25%;
+  min-width: 300px;
   height: 300px;
   position: sticky;
   top: 80px;
-  background-color: yellowgreen;
+  background-color: rgba(205, 255, 113, 0.301);
+  padding: 5px 10px 5px 50px;
+  clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 }
+
+/* .contactme-section div {
+  font-size: 2rem;
+} */
 
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
@@ -351,18 +406,55 @@ img {
     display: block;
   }
 
-  .content-section {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 576px) {
   #overlay {
     display: none;
   }
 
   .overlay-toggle {
     display: none;
+  }
+
+  .body-overflow {
+    overflow: scroll;
+  }
+
+  .content-section {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content-section h3 {
+    font-size: 2rem;
+  }
+
+  .content-section h4 {
+    font-size: 1.8rem;
+  }
+
+  .content-section p {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .baffle-title {
+    font-size: 2rem;
+  }
+
+  .baffle-title:nth-child(2) {
+    font-size: 1rem;
+  }
+
+  .competencies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-section p {
+    text-align: left;
   }
 }
 
