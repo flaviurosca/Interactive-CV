@@ -1,6 +1,11 @@
 :root {
   font-size: 10px;
-  --primary-color: rgba(68, 68, 68, 0.5);
+  --dark-color: #222629;
+  --gray-color: #474b4f;
+  --light-gray-color: #6b6e70;
+  --green-color: #61892f;
+  --light-green-color: #86c232;
+  --light: #ecffce;
 }
 
 * {
@@ -27,7 +32,7 @@ body {
   z-index: 3;
   display: grid;
   place-items: center;
-  background-color: rgb(95, 95, 95);
+  background-color: var(--light-gray-color);
   transition: 0.5s ease-in-out;
 }
 
@@ -44,7 +49,7 @@ body {
   width: 100vw;
   height: 100vh;
   border-radius: 0;
-  background-color: rgba(0,0,0, 0.9);
+  background-color: var(--dark-color);
   overflow: hidden;
   bottom: 0px;
   left: 0px;
@@ -70,7 +75,7 @@ body {
   height: 40px;
   border: none;
   border-radius: 90px 90px 0 0;
-  background:linear-gradient(to bottom, #78c8e6 15%, #408c99 100%);
+  background:linear-gradient(to bottom, var(--light-green-color) 15%, var(--green-color) 100%);
   outline: none;
   display: block;
   z-index: 4;
@@ -81,7 +86,7 @@ body {
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  box-shadow: 0px 3px 15px 5px #000;
+  box-shadow: 0px 3px 15px 5px var(--gray-color);
   transition: 0.5s;
 }
 
@@ -200,7 +205,6 @@ button {
 #time {
   font-size: 8rem;
   color: #fff;
-  
 }
 
 
@@ -214,7 +218,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: white;
+  background-color: var(--dark-color);
   z-index: 2;
 }
 
@@ -222,6 +226,7 @@ nav {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 2rem;
+  color: var(--light);
 }
 
 .nav-links {
@@ -235,18 +240,11 @@ nav {
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 1.5rem;
+  color: var(--light-green-color);
 }
 
 .nav-links a:hover {
-  text-shadow: 3px 1px 3px rgb(90, 90, 90, 0.5);
-}
-
-a:link {
-  color: black;
-}
-
-a:visited {
-  color: black;
+  text-shadow: 3px 1px 3px var(--light-gray-color);
 }
 
 .hamburger {
@@ -257,7 +255,7 @@ a:visited {
 .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: black;
+  background-color: var(--light-green-color);
   margin: 5px;
   transition: all 0.3s ease;
 }
@@ -267,13 +265,18 @@ a:visited {
 /* __________MAIN__________ */
 main {
   margin: 0 auto;
+  background-color: var(--light-gray-color);
+  background-image: url('/assets/img/Geometric\ Wallpapers\ for\ Desktop.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .home-section {
   width: 100%;
   height: 100vh;
   background-image: url('/assets/img/home-background.jpg');
-  background-color: var(--primary-color);
+  background-color: var(--dark-color);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -288,10 +291,10 @@ img {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: var(--light);
   cursor: none;
   text-align: center;
-  text-shadow: 3px 5px 5px rgb(0, 0, 0);
+  text-shadow: 3px 5px 5px var(--light-gray-color);
   /* z-index: 1; */
   overflow: hidden;
   user-select: none;
@@ -306,7 +309,7 @@ img {
 
 
 .content-section {
-  margin: 50px 0px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
 }
@@ -314,14 +317,17 @@ img {
 
 .content-section article {
   margin-bottom: 50px;
-  
+  background-color: black;
+  opacity: 0.9;
+  padding: 5px 40px;
 }
 
 .content-section h3 {
   font-size: 3rem;
   margin-bottom: 20px;
   letter-spacing: 5px;
-  background-color: yellowgreen;
+  background-color: var(--light-green-color);
+  color: var(--dark-color);
   padding: 5px 50px;
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 }
@@ -329,6 +335,7 @@ img {
 .content-section h4 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  color: var(--green-color);
 }
 
 .content-section p {
@@ -336,6 +343,7 @@ img {
   line-height: 4rem;
   margin-bottom: 20px;
   text-align: justify;
+  color: var(--light);
 }
 
 .main-content {
@@ -343,16 +351,17 @@ img {
   margin: 0px 5%;
 }
 
-article {
-  background-color: rgba(205, 255, 113, 0.301);
-  padding: 5px 50px;
-}
-
 .competencies {
   align-items: center;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   row-gap: 10px;
+  background-color: var(--light);
+  padding: 5px 0px 5px 5px;
+}
+
+.competencies h4 {
+  color: var(--dark-color);
 }
 
 .competencies img {
@@ -364,14 +373,11 @@ article {
   margin: 100px 0px;
 }
 
-.education p {
-  font-size: 1.5rem;
-}
-
 .languages ul {
   font-size: 2rem;
   line-height: 3rem;
   margin-left: 25px;
+  color: var(--light);
 }
 
 .portfolio-section .projects {  
@@ -396,11 +402,12 @@ article {
 
 .contactme-section {
   min-width: 300px;
-  height: 350px;
+  height: 600px;
   margin: 0px 5%;
   position: sticky;
   top: 80px;
-  background-color: rgba(205, 255, 113, 0.301);
+  background-color: black;
+  opacity: 0.9;
   padding: 5px 10px 5px 50px;
 }
 
@@ -410,6 +417,8 @@ article {
   grid-column-gap: 0px;
   grid-row-gap: 30px;
   align-items: center;
+  color: var(--light);
+  margin-bottom: 50px;
 }
 
 .contactme-section dt {
@@ -421,9 +430,21 @@ article {
   overflow-wrap: break-word;
 }
 
+.contactme-section a {
+  color: var(--light);
+}
+
+.contactme-section .portrait {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
 footer {
   min-height: 4vh;
-  background-color: rgba(68, 68, 68, 0.5);
+  background-color: var(--dark-color);
+  color: var(--light-green-color);
   font-size: 1.2rem;
   text-align: right;
   padding: 10px 100px 0px 0px;
@@ -452,7 +473,7 @@ footer {
     width: 50%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
-    background-color: white;
+    background-color: var(--dark-color);
   }
 
   .nav-links li {
