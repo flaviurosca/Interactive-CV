@@ -540,6 +540,10 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .languages ul {
+    font-size: 1.5rem;
+  }
+
   .portfolio-section .projects {
     grid-template-columns: repeat(1, 1fr);
   }
